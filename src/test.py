@@ -15,7 +15,7 @@ if __name__ == '__main__':
     # 启动浏览器获取源代码
     browser = webdriver.Chrome(chrome_options)
     browser.implicitly_wait(10)
-    mainUrl = "http://10.27.141.10:8085/"
+
 
     # 用户名密码
     username = "wangjia"
