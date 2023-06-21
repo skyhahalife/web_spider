@@ -14,7 +14,7 @@ if __name__ == '__main__':
     chrome_options.add_argument('--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data')
     # 启动浏览器获取源代码
     browser = webdriver.Chrome(chrome_options)
-    mainUrl = "http://10.27.141.10:8085/nav/basicInfo/index"
+    mainUrl = ""
 
     # 用户名密码
     username = "wangjia"
