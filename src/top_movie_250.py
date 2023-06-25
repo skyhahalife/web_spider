@@ -16,6 +16,7 @@ if __name__ == '__main__':
         'Cookie':'bid=SXQ8o148eE8; ll="118120"; __utmc=30149280; __utmz=30149280.1686791735.4.4.utmcsr=baidu|utmccn=(organic)|utmcmd=organic; ap_v=0,6.0; __utma=30149280.204071560.1680594820.1686791735.1686812599.5; __utmb=30149280.0.10.1686812599; dbcl2="204088368:8roBp+bMw5Y"; ck=vDWa; frodotk_db="3aaabd79f0dcc447b000386dd2964cd5"; push_noty_num=0; push_doumail_num=0; __gads=ID=0beb1c9dcab41d78-22b0bf1882e1003b:T=1686732462:RT=1686814222:S=ALNI_MYVT-dUAJIlW-XMj5PiTgmYguuk8w; __gpi=UID=00000c4ec8f1b5b1:T=1686732462:RT=1686814222:S=ALNI_MYd5rhb7M_GaARqYL5JQPzwQ1jLSQ'
     }
 
+    # There are 25 items in each page, so we should loop 10 times
     for i in range(0,10):
         url = loop_link + str(i*25)
         response = requests.get(url, headers=headers, timeout= 10)
