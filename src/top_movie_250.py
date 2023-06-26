@@ -1,3 +1,5 @@
+import time
+
 import bs4
 import requests
 import re
@@ -7,6 +9,7 @@ link_01 = 'https://movie.douban.com/chart'
 
 if __name__ == '__main__':
 
+    start_time = time.time()
     loop_link = 'https://movie.douban.com/top250?start='
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
@@ -17,7 +20,7 @@ if __name__ == '__main__':
     }
 
     # There are 25 items in each page, so we should loop 10 times
-    for i in range(0,10):
+    for i in range(0, 10):
         url = loop_link + str(i*25)
         response = requests.get(url, headers=headers, timeout= 10)
         if response.status_code == 200:
@@ -59,18 +62,7 @@ if __name__ == '__main__':
                 for i in play_links:
                     print('{:<10}'.format(i.text.strip() + ":") + re.findall('href=\"(.*?)\"', str(i))[-1])
 
-            #if len(play_links_list)
+            end_time = time.time()
 
-            # detail_pattern = re.compile(r'>(.*?)</span>')
-            # print(str(detail_span),123)
-            # detail = detail_pattern.findall(str(detail_span).strip())
-            # print(len(detail))
-            # detail_content = re.findall(detail_pattern,detail_span[0].text)
-            # print("电影简介:  " + str(detail_span[0].text).strip('\t').strip('\r').strip('\n').s)
-            # print(titles[0])
+        print("共用时间：", end_time - start_time, "秒")
 
-
-            # print("              ")
-            # print("电影标题",i.a.span)
-            # content > div > div.article > ol > li:nth-child(1) > div > div.info > div.hd > a > span:nth-child(2)
-            # // *[ @ id = "content"] / div / div[1] / ol / li[1] / div / div[2] / div[1] / a / span[2]
