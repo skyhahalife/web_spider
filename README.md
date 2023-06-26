@@ -4,4 +4,5 @@
 
 3.top_movie_250_with_multithreading  requests爬虫多线程优化
 
-豆瓣爬虫有时会被拦截，请及时更换Cookie中 bid
+豆瓣爬虫有时会被拦截，请及时更换Cookie中 bid.
+豆瓣的防火墙功能可能导致爬虫异常，找不到元素请手动进入豆瓣查看是否被限制
